@@ -16,12 +16,11 @@ application/cache/ci_session*
 # ===========================================
 # Ambiente e Configurações Sensíveis
 # ===========================================
-.env
+# .env
 .env.local
 .env.*.local
-application/config/database.php
-application/config/my_config.php
-application/config/config.php
+# application/config/database.php  <-- Removido para permitir o deploy via Docker
+# application/config/config.php    <-- Removido para permitir o deploy via Docker
 
 # ===========================================
 # IDEs e Editores
