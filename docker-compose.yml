@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Instância do ChatPeão
+  chatpeao_app:
+    build: .
+    container_name: chatpeao_app_${INSTANCE_ID:-1}
+    ports:
+      - "${APP_PORT:-8080}:80"
+    environment:
+      - DB_HOSTNAME=chatpeao_db
+      - DB_USERNAME=root
+      - DB_PASSWORD=root_password
+      - DB_DATABASE=chatpeao_db
+      - BASE_URL=http://localhost:${APP_PORT:-8080}/
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - chatpeao_db
+
+  # Banco de Dados da Instância
+  chatpeao_db:
+    image: mariadb:10.6
+    container_name: chatpeao_db_${INSTANCE_ID:-1}
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=chatpeao_db
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./assets/backup_db/initial_db.sql:/docker-entrypoint-initdb.d/initial_db.sql:ro
+
+volumes:
+  db_data:

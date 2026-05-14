@@ -1,0 +1,55 @@
+# ===========================================
+# Arquivos de Log e Cache do CodeIgniter
+# ===========================================
+application/logs/*
+application/cache/*
+!application/logs/index.html
+!application/cache/index.html
+!application/logs/.gitkeep
+!application/cache/.gitkeep
+
+# ===========================================
+# Arquivos de Sessão
+# ===========================================
+application/cache/ci_session*
+
+# ===========================================
+# Ambiente e Configurações Sensíveis
+# ===========================================
+.env
+.env.local
+.env.*.local
+application/config/database.php
+application/config/my_config.php
+application/config/config.php
+
+# ===========================================
+# IDEs e Editores
+# ===========================================
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ===========================================
+# Sistema Operacional
+# ===========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================================
+# Dependências (se aplicável)
+# ===========================================
+/vendor/
+node_modules/
+
+# ===========================================
+# Arquivos Temporários
+# ===========================================
+*.tmp
+*.temp
+*.log
