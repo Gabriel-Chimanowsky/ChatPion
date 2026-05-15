@@ -26,7 +26,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Set permissions for CodeIgniter
-RUN chown -R www-data:www-data /var/www/html \
+RUN mkdir -p /var/www/html/application/logs /var/www/html/application/cache /var/www/html/upload \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/application/logs \
     && chmod -R 755 /var/www/html/application/cache \
     && chmod -R 755 /var/www/html/upload
