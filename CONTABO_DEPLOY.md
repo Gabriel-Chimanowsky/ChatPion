@@ -49,9 +49,21 @@ Suba o proxy: `docker compose up -d`. Acesse em `IP_DO_SERVIDOR:81` (Login padr�
 
 ---
 
-## 3. Subindo Instâncias do ChatPeão
+## 3. Baixando o Código via GitHub
 
-Para cada cliente, você pode clonar o repositório em uma pasta diferente ou simplesmente rodar comandos com nomes de projeto diferentes.
+No seu servidor Contabo, escolha uma pasta para o projeto e clone o repositório:
+
+```bash
+# Navegar para a home
+cd ~
+
+# Clonar o repositório (Substitua SEU_USUARIO pelo seu nome no GitHub)
+# Use o Token de Acesso como senha se o repositório for privado
+git clone https://github.com/Gabriel-Chimanowsky/ChatPion.git
+cd chatpeao
+```
+
+## 4. Subindo Instâncias do ChatPeão
 
 ### Exemplo para o Cliente "Gabriel":
 
@@ -70,7 +82,7 @@ export INSTANCE_ID="empresax" APP_PORT="8082" && docker compose -p chatpeao_empr
 
 ---
 
-## 4. Apontando os Domínios no Nginx Proxy Manager
+## 5. Apontando os Domínios no Nginx Proxy Manager
 
 No painel do NPM (porta 81):
 1. Vá em **Proxy Hosts** -> **Add Proxy Host**.
@@ -81,7 +93,22 @@ No painel do NPM (porta 81):
 
 ---
 
-## 5. Dicas da Contabo
+## 7. Como Atualizar (Update)
+
+Sempre que você fizer alterações no código localmente:
+
+1. **Local**: `git add .`, `git commit -m "descrição"`, `git push`.
+2. **VPS**:
+   ```bash
+   cd ~/chatpeao
+   git pull
+   # Se houver mudanças no Dockerfile ou docker-compose:
+   docker compose up --build -d
+   ```
+
+---
+
+## 8. Dicas da Contabo
 
 *   **Firewall**: Certifique-se de que as portas 80, 443 e 81 estão abertas no painel da Contabo (se houver firewall externo) ou no `ufw` do Linux.
 *   **Performance**: Como as instâncias são leves, uma VPS média da Contabo aguenta dezenas de instâncias do ChatPeão tranquilamente.
