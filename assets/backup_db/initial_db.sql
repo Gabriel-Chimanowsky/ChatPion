@@ -3373,7 +3373,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `fb_id`, `mobile`, `password`, `address`, `user_type`, `status`, `add_date`, `purchase_date`, `last_login_at`, `activation_code`, `expired_date`, `bot_status`, `package_id`, `deleted`, `brand_logo`, `brand_url`, `vat_no`, `currency`, `time_zone`, `company_email`, `paypal_email`, `paypal_subscription_enabled`, `last_payment_method`, `last_login_ip`, `browser_notification_enabled`, `affiliate_id`) VALUES
-(1, 'Admin', 'admin@admin.com', '', '', '259534db5d66c3effb7aa2dbbee67ab0', '', 'Admin', '1', '2019-08-25 12:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '1', 0, '0', '', NULL, NULL, 'USD', '', NULL, '', '0', '', '', '0', 0),
+(1, 'Admin', 'gabriel.trafego.winup@gmail.com', '', '', '3a3560341395265ac49a06f02558914b', '', 'Admin', '1', '2019-08-25 12:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '1', 0, '0', '', NULL, NULL, 'USD', '', NULL, '', '0', '', '', '0', 0),
 (2, 'Gabriel', 'gabriel@chatpeao.com', '', '', '0192023a7bbd73250516f069df18b500', '', 'Admin', '1', '2024-05-13 12:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, '2099-12-31 23:59:59', '1', 1, '0', '', NULL, NULL, 'BRL', '', NULL, '', '0', '', '', '0', 0);
 
 -- --------------------------------------------------------
